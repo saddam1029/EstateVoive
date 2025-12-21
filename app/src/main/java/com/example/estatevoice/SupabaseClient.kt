@@ -26,13 +26,23 @@ object SupabaseClient {
 
             // Public anonymous key (used on client-side apps like Android)
             // ⚠️ This is safe to use in mobile apps
-            supabaseKey = "YOUR_ANON_PUBLIC_KEY"
+            supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtmeHd3a3ZkbWltdHV1anphdGNoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYxMzI4NDcsImV4cCI6MjA4MTcwODg0N30.Wx8khZAp0zDCHRBt1HEZ1pEA82vVoKK5rQkB0yLX-dM"
         ) {
+
+//            Think of Supabase like a mobile phone 📱
+//            You install apps/features inside it:
+//            GoTrue → Login system
+//            Postgrest → Database access
 
             // Install GoTrue → Supabase Authentication module
             install(GoTrue) {
 
                 // Automatically refresh the session when access token expires
+//                Supabase automatically:
+//                Detects token expiry
+//                Requests a new token(e.g. 1 hour)
+//                Updates it silently
+//                User stays logged in
                 alwaysAutoRefresh = true
 
                 // Automatically save user session (login state)
