@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_24sdp"
+    android:background="#F8F8F5">
+
+    <!-- App Container -->
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Logo -->
+        <LinearLayout
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:gravity="center"
+            android:background="@drawable/bg_logo"
+            android:elevation="@dimen/_6sdp">
+
+            <ImageView
+                android:layout_width="@dimen/_36sdp"
+                android:layout_height="@dimen/_36sdp"
+                android:src="@drawable/logo"
+                app:tint="#000000" />
+        </LinearLayout>
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AI Voice Ops"
+            android:textSize="@dimen/_32ssp"
+            android:textStyle="bold"
+            android:textColor="#0F172A"
+            android:layout_marginTop="@dimen/_16sdp"/>
+
+        <!-- Subtitle -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Internal Monitoring Portal"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            android:textColor="#64748B"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginBottom="@dimen/_32sdp"/>
+
+        <!-- Email Label -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Work Email"
+            android:textStyle="bold"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="#0F172A"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_6sdp"/>
+
+        <!-- Email Input -->
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_56sdp"
+            android:hint="Enter your work email"
+            android:inputType="textEmailAddress"
+            android:paddingStart="@dimen/_20sdp"
+            android:paddingEnd="@dimen/_20sdp"
+            android:background="@drawable/bg_input"
+            android:textColor="#0F172A"
+            android:textColorHint="#94A3B8"
+            android:textSize="@dimen/_14ssp"/>
+
+        <!-- Password Label -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:textStyle="bold"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="#0F172A"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_6sdp"/>
+
+        <!-- Password Input -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_56sdp">
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Enter your password"
+                android:inputType="textPassword"
+                android:paddingStart="@dimen/_20sdp"
+                android:paddingEnd="@dimen/_48sdp"
+                android:background="@drawable/bg_input"
+                android:textColor="#0F172A"
+                android:textColorHint="#94A3B8"
+                android:textSize="@dimen/_14ssp"/>
+
+            <ImageButton
+                android:id="@+id/btnTogglePassword"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@android:color/transparent"
+                android:contentDescription="TODO"
+                android:scaleType="centerInside"
+                android:src="@drawable/hidden"
+                app:tint="#94A3B8"/>
+        </RelativeLayout>
+
+
+        <!-- Forgot Password -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Forgot Password?"
+            android:textSize="@dimen/_13ssp"
+            android:textColor="#64748B"
+            android:gravity="end"
+            android:layout_marginTop="@dimen/_8sdp"/>
+
+        <!-- Login Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_56sdp"
+            android:text="Login"
+            android:textStyle="bold"
+            android:textSize="@dimen/_16ssp"
+            android:textColor="#1C1C0D"
+            android:background="@drawable/bg_primary_button"
+            android:layout_marginTop="@dimen/_32sdp"
+            app:backgroundTint="@null"/>
+
+    </LinearLayout>
+
+    <!-- Footer -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="v1.0.4 (Internal Build)"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="#94A3B8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="@dimen/_12sdp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
