@@ -5,9 +5,8 @@ import io.github.jan.supabase.SupabaseClient
 import io.github.jan.supabase.createSupabaseClient
 import io.github.jan.supabase.gotrue.GoTrue
 import io.github.jan.supabase.postgrest.Postgrest
-import io.github.jan.supabase.serializer.KotlinXSerializer
 
-object SupabaseClient {
+object SupabaseManager {
 
     // Make sure this client is initialized once in Application class
     // This variable will hold our Supabase client instance
