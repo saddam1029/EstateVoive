@@ -1,9 +1,10 @@
 package com.example.estatevoice
 
 import android.annotation.SuppressLint
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
+import java.text.SimpleDateFormat
+import java.util.Locale
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
@@ -30,20 +31,38 @@ class CallAdapter(
     ) {
         val call = usersList[position]
 
-        holder.tvName.text = call.customer_name ?: "Unknown"
-        val status = call.customer_was_satisfied ?: false
+        holder.tvName.text = call.fullName ?: "Unknown"
+        holder.tvContact.text = call.phone ?: "No Number"
+        holder.tvBusiness.text = call.businessName ?: "No Business"
+        holder.tvTime.text = formatTimeOnly(call.createdAt)
 
-        if (status == true) {
+
+        val status = call.intentLevel ?: "low"
+
+        if (status == "high") {
 
             // 🟢 GREEN STATE
             holder.tvStatus.text = "Qualified"
 
             holder.tvStatus.setTextColor(
-                ContextCompat.getColor(holder.itemView.context, R.color.green)
+                ContextCompat.getColor(holder.itemView.context, R.color.dark_green)
             )
 
             holder.ivStatus.setColorFilter(
-                ContextCompat.getColor(holder.itemView.context, R.color.green)
+                ContextCompat.getColor(holder.itemView.context, R.color.dark_green)
+            )
+
+            holder.layoutStatus.setBackgroundResource(R.drawable.bg_status_green)
+        } else if (status == "medium") {
+            // 🟢 GREEN STATE
+            holder.tvStatus.text = "Qualified"
+
+            holder.tvStatus.setTextColor(
+                ContextCompat.getColor(holder.itemView.context, R.color.dark_green)
+            )
+
+            holder.ivStatus.setColorFilter(
+                ContextCompat.getColor(holder.itemView.context, R.color.dark_green)
             )
 
             holder.layoutStatus.setBackgroundResource(R.drawable.bg_status_green)
@@ -53,11 +72,11 @@ class CallAdapter(
             holder.tvStatus.text = "Not Qualified"
 
             holder.tvStatus.setTextColor(
-                ContextCompat.getColor(holder.itemView.context, R.color.red)
+                ContextCompat.getColor(holder.itemView.context, R.color.dark_red)
             )
 
             holder.ivStatus.setColorFilter(
-                ContextCompat.getColor(holder.itemView.context, R.color.red)
+                ContextCompat.getColor(holder.itemView.context, R.color.dark_red)
             )
 
             holder.layoutStatus.setBackgroundResource(R.drawable.bg_status_red)
@@ -66,6 +85,25 @@ class CallAdapter(
 
     }
 
+
+    fun formatTimeOnly(dateTime: String?): String {
+        if (dateTime.isNullOrEmpty()) return "--"
+
+        return try {
+            val inputFormat =
+                SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault())
+
+            val outputFormat =
+                SimpleDateFormat("h:mm a", Locale.getDefault())
+
+            val date = inputFormat.parse(dateTime.substring(0, 19))
+            outputFormat.format(date!!)
+        } catch (e: Exception) {
+            "--"
+        }
+    }
+
+
     override fun getItemCount(): Int {
         return usersList.size
     }
@@ -73,6 +111,9 @@ class CallAdapter(
     class CallViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvName: TextView = itemView.findViewById(R.id.tvName)
         val tvStatus: TextView = itemView.findViewById(R.id.tvStatus)
+        val tvContact: TextView = itemView.findViewById(R.id.tvContact)
+        val tvBusiness: TextView = itemView.findViewById(R.id.tvBusiness)
+        val tvTime: TextView = itemView.findViewById(R.id.tvTime)
         val ivStatus: ImageView = itemView.findViewById(R.id.ivStatus)
         val layoutStatus: ConstraintLayout = itemView.findViewById(R.id.clStatus)
 

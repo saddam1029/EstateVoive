@@ -95,7 +95,7 @@
                     app:tint="@color/silver" />
 
                 <TextView
-                    android:id="@+id/tvCompany"
+                    android:id="@+id/tvBusiness"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_5sdp"
@@ -153,7 +153,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.5"
-                    app:tint="@color/green" />
+                    app:tint="@color/dark_green" />
 
                 <TextView
                     android:id="@+id/tvStatus"
@@ -162,7 +162,7 @@
                     android:layout_marginStart="@dimen/_5sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
                     android:text="Not Qualified"
-                    android:textColor="@color/green"
+                    android:textColor="@color/dark_green"
                     android:textSize="@dimen/_10ssp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
