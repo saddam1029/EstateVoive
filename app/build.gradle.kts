@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     kotlin("plugin.serialization") version "1.9.22" // ADD THIS DIRECTLY
+
 }
 
 android {
@@ -50,6 +51,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.play.services.auth)
 //    implementation(libs.firebase.auth)
 //    implementation(libs.firebase.firesftore)
     testImplementation(libs.junit)
@@ -71,13 +73,6 @@ dependencies {
     implementation("io.ktor:ktor-client-android:2.3.5")
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
-
-
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
-
-
 
 
 }

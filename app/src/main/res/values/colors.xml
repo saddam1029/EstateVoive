@@ -4,6 +4,8 @@
     <color name="white">#FFFFFFFF</color>
 
 
+    <color name="app_color">#F9F506</color>
+
     <color name="background_color">#F6F6F4</color>
     <color name="silver">#5B5B54</color>
     <color name="dark_green">#047757</color>

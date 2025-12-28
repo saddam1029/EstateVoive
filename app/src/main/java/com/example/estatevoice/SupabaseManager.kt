@@ -4,7 +4,7 @@ import android.content.Context
 import io.github.jan.supabase.SupabaseClient
 import io.github.jan.supabase.createSupabaseClient
 import io.github.jan.supabase.gotrue.GoTrue
-import io.github.jan.supabase.postgrest.Postgrest
+    import io.github.jan.supabase.postgrest.Postgrest
 
 object SupabaseManager {
 
@@ -33,21 +33,10 @@ object SupabaseManager {
 //            GoTrue → Login system
 //            Postgrest → Database access
 
+//            install(Auth)
+
             // Install GoTrue → Supabase Authentication module
-            install(GoTrue) {
-
-                // Automatically refresh the session when access token expires
-//                Supabase automatically:
-//                Detects token expiry
-//                Requests a new token(e.g. 1 hour)
-//                Updates it silently
-//                User stays logged in
-                alwaysAutoRefresh = true
-
-                // Automatically save user session (login state)
-                // This allows user to stay logged in even after app restart
-                autoSaveToStorage = true
-            }
+            install(GoTrue)
 
             // Install Postgrest → used for database operations (CRUD)
             // Allows you to read/write data from Supabase tables

@@ -27,10 +27,9 @@ class CallLogsActivity : AppCompatActivity() {
     private fun fetchClient() {
         lifecycleScope.launch {
             viewModel.call.collect {
-                binding.rvCallLogs.adapter = CallAdapter(it)
+                binding.rvCallLogs.adapter = CallAdapter(this@CallLogsActivity, it)
             }
         }
-
         viewModel.loadCall()
     }
 }

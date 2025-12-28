@@ -62,29 +62,30 @@
             android:layout_height="match_parent">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cvStatus"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_150sdp"
                 android:layout_margin="@dimen/_20sdp"
                 android:backgroundTint="@color/light_green"
+                android:elevation="@dimen/_5sdp"
                 app:cardCornerRadius="@dimen/_15sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                android:elevation="@dimen/_5sdp"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="@dimen/_35sdp"
                     android:layout_height="@dimen/_35sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
                     android:layout_marginTop="@dimen/_15sdp"
-                    android:background="@drawable/bg_check_icon"
-                    android:layout_marginStart="@dimen/_15sdp">
+                    android:background="@drawable/bg_check_icon">
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/check_mark"
                         android:layout_margin="@dimen/_9sdp"
+                        android:src="@drawable/check_mark"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
@@ -113,6 +114,30 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clTime"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_17sdp"
+                        android:background="@drawable/bg_time"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tvIntent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="High"
+                            android:textColor="@color/silver"
+                            android:textSize="@dimen/_10ssp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
                     <TextView
                         android:id="@+id/tvDetailContact"
                         android:layout_width="wrap_content"
@@ -125,33 +150,568 @@
                         app:layout_constraintTop_toBottomOf="@+id/tvDetailName" />
 
                     <TextView
-                        android:id="@+id/tvDetailBusiness"
+                        android:id="@+id/tvRole"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_3sdp"
-                        android:text="Sunset Realty Group"
+                        android:text="Independent Brocker"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_10ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvDetailContact" />
 
                     <View
+                        android:id="@+id/view"
                         android:layout_width="match_parent"
-                        android:layout_height="0.3dp"
-                        android:background="@color/white"
+                        android:layout_height="1dp"
                         android:layout_marginTop="@dimen/_15sdp"
+                        android:background="@color/white"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvDetailBusiness" />
+                        app:layout_constraintTop_toBottomOf="@+id/tvRole" />
+
+                    <TextView
+                        android:id="@+id/tvNote"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Client requested a demo after 2 PM."
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view" />
+
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
             </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_235sdp"
+                android:layout_margin="@dimen/_20sdp"
+                android:elevation="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_15sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cvStatus">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:background="#CDCDFF"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_marginStart="@dimen/_20sdp"
+                            android:backgroundTint="#3F51B5"
+                            app:cardCornerRadius="@dimen/_5sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.5">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/_5sdp"
+                                android:src="@drawable/user"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.5"
+                                app:tint="@color/white" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:text="Lead Information"
+                            android:textColor="#3F51B5"
+                            android:textSize="@dimen/_11ssp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/cardView"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout5"
+                        android:layout_width="@dimen/_110sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/bg_information"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+                        <ImageView
+                            android:id="@+id/ivName"
+                            android:layout_width="@dimen/_13sdp"
+                            android:layout_height="@dimen/_13sdp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:src="@drawable/user"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/silver" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="Name"
+                            android:textColor="@color/silver"
+                            android:textSize="@dimen/_9ssp"
+                            app:layout_constraintStart_toEndOf="@+id/ivName"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvNameInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="Syed Saddam"
+                            android:textColor="@color/silver"
+                            android:textSize="@dimen/_9ssp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.5"
+                            app:layout_goneMarginStart="@dimen/_10sdp" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout4"
+                        android:layout_width="@dimen/_110sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@drawable/bg_information"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+                        <ImageView
+                            android:id="@+id/ivContact"
+                            android:layout_width="@dimen/_13sdp"
+                            android:layout_height="@dimen/_13sdp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:src="@drawable/phone"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/silver" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="Phone"
+                            android:textColor="@color/silver"
+                            android:textSize="@dimen/_9ssp"
+                            app:layout_constraintStart_toEndOf="@+id/ivContact"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvContactInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="(555) 123-4567"
+                            android:textColor="@color/silver"
+                            android:textSize="@dimen/_9ssp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.5"
+                            app:layout_goneMarginStart="@dimen/_10sdp" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout3"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/bg_information"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
+
+                        <ImageView
+                            android:id="@+id/ivBusiness"
+                            android:layout_width="@dimen/_13sdp"
+                            android:layout_height="@dimen/_13sdp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:src="@drawable/building"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/silver" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="Business"
+                            android:textColor="@color/silver"
+                            android:textSize="@dimen/_9ssp"
+                            app:layout_constraintStart_toEndOf="@+id/ivBusiness"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvBusinessInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="Abdullah Real Estate"
+                            android:textColor="@color/silver"
+                            android:textSize="@dimen/_9ssp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.5"
+                            app:layout_goneMarginStart="@dimen/_10sdp" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/bg_information"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+                        <ImageView
+                            android:id="@+id/ivTime"
+                            android:layout_width="@dimen/_13sdp"
+                            android:layout_height="@dimen/_13sdp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:src="@drawable/appointment"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/silver" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="Business"
+                            android:textColor="@color/silver"
+                            android:textSize="@dimen/_9ssp"
+                            app:layout_constraintStart_toEndOf="@+id/ivTime"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvTimeInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="24 Dec 25 08:14:08"
+                            android:textColor="@color/silver"
+                            android:textSize="@dimen/_9ssp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.5"
+                            app:layout_goneMarginStart="@dimen/_10sdp" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView4"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_235sdp"
+                android:layout_margin="@dimen/_20sdp"
+                android:elevation="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_15sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout8"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:background="#CDCDFF"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView1"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_marginStart="@dimen/_20sdp"
+                            android:backgroundTint="#673AB7"
+                            app:cardCornerRadius="@dimen/_5sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.5">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/_5sdp"
+                                android:src="@drawable/information"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.5"
+                                app:tint="@color/white" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:text="Ai Call Summary"
+                            android:textColor="#673AB7"
+                            android:textSize="@dimen/_11ssp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/cardView1"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_margin="@dimen/_20sdp"
+                        android:background="@drawable/bg_information"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout8">
+
+                        <TextView
+                            android:id="@+id/tvSummary"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/_10sdp"
+                            android:text="Sarah is a qualified buyer who recently got pre-approved for a mortgage. She is looking for a 3-bedroom home in downtown Seattle with a budget of $800K to $1.2M. She mentioned she needs to relocate for work and is serious about purchasing within the next 2-3 months. She expressed interest in modern condos with city views"
+                            android:textColor="@color/silver"
+                            android:textSize="@dimen/_10ssp"
+                            android:lineSpacingExtra="@dimen/_3sdp"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.5"
+                            app:layout_goneMarginStart="@dimen/_10sdp" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_margin="@dimen/_20sdp"
+                android:elevation="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_15sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView4">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout6"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:background="#CDCDFF"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView9"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_marginStart="@dimen/_20sdp"
+                            android:backgroundTint="#673AB7"
+                            app:cardCornerRadius="@dimen/_5sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.5">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/_5sdp"
+                                android:src="@drawable/audio"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.5"
+                                app:tint="@color/white" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:text="Call Recording"
+                            android:textColor="#673AB7"
+                            android:textSize="@dimen/_11ssp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/cardView9"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_audio"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:elevation="6dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout6">
+
+                        <!-- Play Button -->
+                        <ImageButton
+                            android:id="@+id/btnPlayPause"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="@dimen/_35sdp"
+                            android:padding="@dimen/_6sdp"
+                            android:background="@drawable/bg_time"
+                            android:src="@drawable/play"
+                            android:contentDescription="Play"
+                            android:scaleType="fitXY"
+                            app:tint="#3F51B5" />
+
+                        <!-- Right Side -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <!-- Time -->
+                            <TextView
+                                android:id="@+id/tvTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="0:00 / 4:05"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp" />
+
+                            <!-- SeekBar -->
+                            <SeekBar
+                                android:id="@+id/seekBar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:progressTint="#FFFFFF"
+                                android:progressBackgroundTint="#FFFFFF"
+                                android:thumbTint="#FFFFFF"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:backgroundTint="#F1F1FF"
+
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:text="💡 This is a demo audio player. In production, this would play the actual call recording."
+                            android:textColor="#3F51B5"
+                            android:textSize="@dimen/_8ssp" />
+
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

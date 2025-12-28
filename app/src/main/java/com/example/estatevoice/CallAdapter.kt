@@ -1,6 +1,8 @@
 package com.example.estatevoice
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import java.text.SimpleDateFormat
@@ -13,6 +15,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
 class CallAdapter(
+    private val context: Context,
     private val usersList: List<ClientModel>
 ) : RecyclerView.Adapter<CallAdapter.CallViewHolder>() {
     override fun onCreateViewHolder(
@@ -35,6 +38,14 @@ class CallAdapter(
         holder.tvContact.text = call.phone ?: "No Number"
         holder.tvBusiness.text = call.businessName ?: "No Business"
         holder.tvTime.text = formatTimeOnly(call.createdAt)
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(context, CallDetailActivity::class.java)
+
+            intent.putExtra("clientID",call.id)
+
+            context.startActivity(intent)
+        }
 
 
         val status = call.intentLevel ?: "low"

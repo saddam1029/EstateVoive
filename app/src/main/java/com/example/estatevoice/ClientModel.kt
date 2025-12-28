@@ -2,8 +2,6 @@ package com.example.estatevoice
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import java.time.OffsetDateTime
-import java.util.UUID
 
 //tells Kotlin how to convert JSON data into a Kotlin object and back.
 //Required to read Supabase data
