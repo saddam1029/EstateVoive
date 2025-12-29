@@ -42,7 +42,19 @@ class CallAdapter(
         holder.itemView.setOnClickListener {
             val intent = Intent(context, CallDetailActivity::class.java)
 
-            intent.putExtra("clientID",call.id)
+            intent.putExtra("clientID", call.id)
+
+            intent.putExtra("name", call.fullName) ?: "Unknown"
+            intent.putExtra("contact", call.phone) ?: "Unknown"
+            intent.putExtra("business", call.businessName) ?: "No Business"
+            intent.putExtra("email", call.email) ?: "No Email"
+            intent.putExtra("role", call.role) ?: "Unknown"
+            intent.putExtra("address", call.city) ?: "No Address"
+            intent.putExtra("interest", call.intentLevel) ?: "Unknown"
+            intent.putExtra("note", call.followUpReason) ?: "No Reasons"
+            intent.putExtra("summary", call.callSummary) ?: "No Call Summary for this Time."
+            intent.putExtra("time", call.createdAt) ?: "-"
+            intent.putExtra("audio", call.recordingUrl) ?: "-"
 
             context.startActivity(intent)
         }
