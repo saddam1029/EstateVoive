@@ -90,7 +90,7 @@
             android:background="@drawable/bg_edit_text"
             android:ems="10"
             android:hint="Enter Your Work Email"
-            android:inputType="text"
+            android:inputType="textEmailAddress"
             android:textColorHint="@color/silver_light"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintEnd_toEndOf="parent"

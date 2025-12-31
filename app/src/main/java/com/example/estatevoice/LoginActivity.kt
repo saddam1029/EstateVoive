@@ -51,7 +51,7 @@ class LoginActivity : AppCompatActivity() {
                 }
 
                 // Fetch role from 'users' table
-                val roleList: List<UserRole> = SupabaseManager.client.postgrest
+                    val roleList: List<UserRole> = SupabaseManager.client.postgrest
                     .from("users")
                     .select()
                     .decodeList()

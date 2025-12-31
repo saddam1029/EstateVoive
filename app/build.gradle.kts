@@ -74,5 +74,8 @@ dependencies {
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
 
+    implementation("com.github.omarzer0:az-edittext:0.1.2")
+
+
 
 }
