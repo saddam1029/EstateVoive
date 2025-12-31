@@ -16,6 +16,34 @@
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
+    // for UserName
+    <style name="CustomTextInputLayoutTheme" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <!-- Outline colors -->
+        <item name="colorControlNormal">@color/blue</item>
+        <item name="colorControlActivated">@color/blue</item>
+        <item name="colorControlHighlight">@color/blue</item>
+
+        <!-- ✅ Selected text background color -->
+        <item name="android:textColorHighlight">@color/blue</item>
+
+    </style>
+
+
+    // for Password
+    <style name="CustomTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/silver_light</item> <!-- Set border color to red -->
+        <item name="boxBackgroundColor">#F2F4FA</item> <!-- Set background color to silver -->
+
+        <item name="colorControlNormal">@color/blue</item>
+
+        <!-- ✅ Selected text background color -->
+        <item name="android:textColorHighlight">@color/blue</item>
+
+        <!-- Activated state color (colorControlActivated) -->
+        <item name="colorControlActivated">#5C75F4</item>
+    </style>
+
     <style name="Theme.EstateVoice" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:statusBarColor">@color/white</item>
         <item name="android:windowLightStatusBar">true</item>
