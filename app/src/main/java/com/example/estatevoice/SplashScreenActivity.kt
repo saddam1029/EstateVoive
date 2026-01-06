@@ -19,7 +19,7 @@ class SplashScreenActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash_screen)
 
         lifecycleScope.launch {
-            delay(1500)
+            delay(500)
 
             // 1️⃣ Get current logged-in user
             val user = try {
@@ -39,7 +39,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
             // 3️⃣ Fetch role for logged-in user
             try {
-                val role: List<UserRole> = SupabaseManager.client.postgrest
+                val role: List<UserModel> = SupabaseManager.client.postgrest
                     .from("users")
                     .select()
                     .decodeList()
@@ -47,9 +47,9 @@ class SplashScreenActivity : AppCompatActivity() {
                 val currentId = role.find { it.id == userId }
 
                 if (currentId?.role.equals("ADMIN", ignoreCase = true)){
-                    navigate(CallLogsActivity::class.java)
+                    navigate(DashBoardActivity::class.java,userId,"ADMIN")
                 }else{
-                    navigate(MainActivity::class.java)
+                    navigate(DashBoardActivity::class.java,userId)
                 }
 
             } catch (e: Exception) {
@@ -59,8 +59,11 @@ class SplashScreenActivity : AppCompatActivity() {
         }
     }
 
-    private fun navigate(destination: Class<*>) {
-        startActivity(Intent(this, destination))
+    private fun navigate(destination: Class<*>,userId: String? = null,admin: String? = null) {
+        val intent = Intent(this, destination)
+        intent.putExtra("userId",userId.toString())
+        intent.putExtra("admin",admin)
+        startActivity(intent)
         finish()
     }
 }

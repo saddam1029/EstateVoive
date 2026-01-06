@@ -3,7 +3,7 @@ package com.example.estatevoice
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class UserRole(
+data class UserModel(
     val id: String,
     val name: String,
     val role: String,

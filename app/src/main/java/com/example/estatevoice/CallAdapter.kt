@@ -76,7 +76,9 @@ class CallAdapter(
             )
 
             holder.layoutStatus.setBackgroundResource(R.drawable.bg_status_green)
-        } else if (status == "medium") {
+        }
+        else if (status == "medium")
+        {
             // 🟢 GREEN STATE
             holder.tvStatus.text = "Qualified"
 

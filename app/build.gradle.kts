@@ -76,6 +76,11 @@ dependencies {
 
     implementation("com.github.omarzer0:az-edittext:0.1.2")
 
+    // OkHttp for network requests
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+
+    //Shimmer / Skeleton loading
+    implementation("com.facebook.shimmer:shimmer:0.5.0")
 
 
 }

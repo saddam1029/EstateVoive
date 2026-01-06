@@ -11,7 +11,6 @@ import io.github.jan.supabase.gotrue.gotrue  // Use 'gotrue' instead of 'auth'
 import io.github.jan.supabase.gotrue.providers.builtin.Email
 import io.github.jan.supabase.postgrest.postgrest
 import kotlinx.coroutines.launch
-import kotlinx.serialization.Serializable
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -51,7 +50,7 @@ class LoginActivity : AppCompatActivity() {
                 }
 
                 // Fetch role from 'users' table
-                    val roleList: List<UserRole> = SupabaseManager.client.postgrest
+                    val roleList: List<UserModel> = SupabaseManager.client.postgrest
                     .from("users")
                     .select()
                     .decodeList()
@@ -61,11 +60,14 @@ class LoginActivity : AppCompatActivity() {
                 // decode as List<UserRole>
 
                 if (currentId?.role.equals("ADMIN", ignoreCase = true)) {
-                    startActivity(Intent(this@LoginActivity, CallLogsActivity::class.java))
+                    val intent = Intent(this@LoginActivity, DashBoardActivity::class.java)
+                    intent.putExtra("currentId", currentId.toString())
+                    intent.putExtra("admin", "ADMIN")
+                    startActivity(intent)
                     Log.e("ADMIN", "Login Failed: $currentId")
 
                 } else {
-                    startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                    startActivity(Intent(this@LoginActivity, DashBoardActivity::class.java))
                 }
 
             } catch (e: Exception) {

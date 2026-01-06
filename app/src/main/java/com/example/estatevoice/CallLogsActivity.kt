@@ -1,5 +1,6 @@
 package com.example.estatevoice
 
+import android.R
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +23,10 @@ class CallLogsActivity : AppCompatActivity() {
 
         fetchClient()
 
+        binding.ivBack.setOnClickListener {
+            onBackPressed()
+        }
+
     }
 
     private fun fetchClient() {
@@ -31,5 +36,11 @@ class CallLogsActivity : AppCompatActivity() {
             }
         }
         viewModel.loadCall()
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+        overridePendingTransition(android.R.anim.slide_in_left, R.anim.slide_out_right)
     }
 }

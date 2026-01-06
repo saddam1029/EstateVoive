@@ -13,15 +13,16 @@ class CallViewModel : ViewModel() {
     private val _call = MutableStateFlow<List<ClientModel>>(emptyList())
     val call: StateFlow<List<ClientModel>> = _call
 
-    private val _loading = MutableStateFlow(false)
+    private val _loading = MutableStateFlow(true) // start with true
     val loading: StateFlow<Boolean> = _loading
 
     fun loadCall() {
         viewModelScope.launch {
             _loading.value = true
-
             try {
                 _call.value = repository.fetchCall()
+            } catch (e: Exception) {
+                // Handle error if needed
             } finally {
                 _loading.value = false
             }
